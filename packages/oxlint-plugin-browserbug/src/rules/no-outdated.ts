@@ -8,7 +8,7 @@ import {
   getWebFeatureSupportStatus,
   isWebFeatureDescriptor,
   webFeatures,
-} from '@woltapp/browserbug-core';
+} from '@browserbug/core';
 import browserslist from 'browserslist';
 import { createRule } from '../rule.js';
 

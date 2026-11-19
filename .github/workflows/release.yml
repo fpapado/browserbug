@@ -13,11 +13,11 @@ permissions: {}
 jobs:
   release:
     # do not run on forks
-    if: github.repository == 'woltapp/browserbug'
+    if: github.repository == 'fpapado/browserbug'
     permissions:
       pull-requests: write # to create a release pull request (changesets/action)
       contents: write # to create the release itself (changesets/action)
-      id-token: write # OpenID Connect token needed for npm publish provenance
+      id-token: write # OIDC token for npm trusted publishing and provenance
     name: Release
     runs-on: ubuntu-latest
     steps:
@@ -40,7 +40,8 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version-file: ".nvmrc"
-          registry-url: https://registry.npmjs.org
+          # No `registry-url`: it writes an .npmrc with an auth token
+          # placeholder, and publishing authenticates with OIDC instead.
       - run: pnpm install --frozen-lockfile
       - name: Create Release Pull Request or Publish to npm
         id: changesets
@@ -54,9 +55,7 @@ jobs:
           # the box. @see: https://github.com/changesets/changesets/issues/238
           publish-script: pnpm changeset:release
           github-token: ${{ secrets.GITHUB_TOKEN }}
-        env:
-          # Authenticates publishing to npm, through the .npmrc that setup-node
-          # writes for registry-url. This is set as a repository secret.
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
-          # Publish with provenance, using the OpenID Connect token above
-          NPM_CONFIG_PROVENANCE: true
+        # No npm token: pnpm publishes with npm trusted publishing, using the
+        # `id-token: write` OIDC token above, and attaches provenance on its
+        # own. Each package's trusted publisher on npmjs.com must point at this
+        # repository and workflow file, and allow `npm publish`.

@@ -1,4 +1,4 @@
-# @woltapp/oxlint-plugin-browserbug
+# @browserbug/oxlint-plugin
 
 ## 1.0.0
 

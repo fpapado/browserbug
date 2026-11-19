@@ -1,4 +1,4 @@
-# `@woltapp/stylelint-plugin-browserbug`
+# `@browserbug/stylelint-plugin`
 
 > Lint rules for documenting, and eventually removing, browser bug workarounds.
 
@@ -15,7 +15,7 @@ npm i stylelint --save-dev
 ### Step 1: Installation
 
 ```sh
-npm i @woltapp/stylelint-plugin-browserbug browserslist web-features --save-dev
+npm i @browserbug/stylelint-plugin browserslist web-features --save-dev
 ```
 
 `browserslist` and `web-features` are peer dependencies, so you choose (and
@@ -28,9 +28,9 @@ Add `browserbug` to the plugins section of your
 
 ```json
 {
-  "plugins": ["@woltapp/stylelint-plugin-browserbug"],
+  "plugins": ["@browserbug/stylelint-plugin"],
   "rules": {
-    "@woltapp/browserbug-comment-no-outdated": true
+    "@browserbug/comment-no-outdated": true
   }
 }
 ```
@@ -43,20 +43,19 @@ into `plugins`, since the package exports an array of plugins:
 
 ```js
 // stylelint.config.mjs (or stylelint.config.ts, on Stylelint 18)
-import browserbug from '@woltapp/stylelint-plugin-browserbug';
+import browserbug from '@browserbug/stylelint-plugin';
 
 /** @type {import('stylelint').Config} */
 export default {
   plugins: [...browserbug],
   rules: {
-    '@woltapp/browserbug-comment-no-outdated': true,
+    '@browserbug/comment-no-outdated': true,
   },
 };
 ```
 
-In a CommonJS config, `require('@woltapp/stylelint-plugin-browserbug')` works
-through Node's `require(esm)` (Node 22.12+), and the array is its `.default`
-export.
+In a CommonJS config, `require('@browserbug/stylelint-plugin')` works through
+Node's `require(esm)` (Node 22.12+), and the array is its `.default` export.
 
 Note: for the rules to practically work, you must also specify a
 [browserslist config](https://browsersl.ist/). Any of the supported browserslist
@@ -87,10 +86,10 @@ descriptors, starting with `--`.
 
 Some bugs take a while to be fixed upstream, so a `last-checked` version can
 fall behind your support targets without the workaround being obsolete. The
-[`versionDrift` option](docs/rules/browserbug-comment-no-outdated.md#versiondrift)
-sets how many browser releases a `last-checked` version may lag behind the
-lowest supported version; within that drift, the rule reports it as a warning
-instead of an error.
+[`versionDrift` option](docs/rules/comment-no-outdated.md#versiondrift) sets how
+many browser releases a `last-checked` version may lag behind the lowest
+supported version; within that drift, the rule reports it as a warning instead
+of an error.
 
 #### `web-feature` descriptors
 
@@ -122,7 +121,7 @@ targets supports that feature.
 
 This package ships a `browserbug` agent skill, which teaches coding agents to
 add and resolve `@browserbug` annotations. See
-[Agent skill](https://github.com/woltapp/browserbug#agent-skill) for how to
+[Agent skill](https://github.com/fpapado/browserbug#agent-skill) for how to
 install it.
 
 ## Keeping browser data stable
@@ -130,7 +129,7 @@ install it.
 Lint results depend on the installed versions of `browserslist`, `caniuse-lite`
 and `web-features`, so a lockfile bump can introduce errors in unrelated PRs.
 See
-[Keeping browser data stable](https://github.com/woltapp/browserbug#keeping-browser-data-stable)
+[Keeping browser data stable](https://github.com/fpapado/browserbug#keeping-browser-data-stable)
 for how to pin and deliberately update them.
 
 ## Rules
@@ -138,9 +137,9 @@ for how to pin and deliberately update them.
 💼 Configurations enabled in.\
 ✅ Set in the `recommended` configuration.
 
-| Name                                                                          | Description                                                                                                               | 💼  |
-| :---------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------ | :-- |
-| [last-checked-updated](docs/rules/browserbug-comment-last-checked-updated.md) | Reports `last-checked` browserbug comments, if browserslist targets a newer version of that browser than the one checked. |     |
-| [no-outdated](docs/rules/browserbug-comment-no-outdated.md)                   | Ensures that no browserbug comment exists, if browserslist support for that browser is outside the specified range.       | ✅  |
+| Name                                                               | Description                                                                                                               | 💼  |
+| :----------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------ | :-- |
+| [last-checked-updated](docs/rules/comment-last-checked-updated.md) | Reports `last-checked` browserbug comments, if browserslist targets a newer version of that browser than the one checked. |     |
+| [no-outdated](docs/rules/comment-no-outdated.md)                   | Ensures that no browserbug comment exists, if browserslist support for that browser is outside the specified range.       | ✅  |
 
 <!-- end auto-generated rules list -->

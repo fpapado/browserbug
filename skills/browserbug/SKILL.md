@@ -6,7 +6,7 @@ description:
   longer need them. Use when writing or reviewing code that works around a
   browser bug or quirk, feature-detects an API with a fallback, or progressively
   enhances for some browsers; and when a `browserbug/no-outdated` or
-  `browserbug-comment-no-outdated` lint error asks for a workaround to be
+  `@browserbug/comment-no-outdated` lint error asks for a workaround to be
   re-evaluated.
 ---
 
@@ -17,7 +17,7 @@ code nobody dares to delete. A `@browserbug` comment records _which_ browsers a
 forked codepath exists for. The lint rules compare it against the project's
 browserslist config and report it once those browsers are no longer targeted, so
 the workaround gets removed at the pace of the project's browser support. See
-the [motivation](https://github.com/woltapp/browserbug#motivation) for the full
+the [motivation](https://github.com/fpapado/browserbug#motivation) for the full
 reasoning.
 
 ## When to annotate

@@ -201,17 +201,15 @@ deal with.
 
 Then, refer to these links:
 
-- Refer to
-  [@woltapp/eslint-plugin-browserbug](./packages/eslint-plugin-browserbug/) for
+- Refer to [@browserbug/eslint-plugin](./packages/eslint-plugin-browserbug/) for
   the webpack loader
 - Refer to
-  [@woltapp/stylelint-plugin-browserbug](./packages/stylelint-plugin-browserbug/)
-  for the webpack loader
-- Refer to
-  [@woltapp/oxlint-plugin-browserbug](./packages/oxlint-plugin-browserbug/) for
+  [@browserbug/stylelint-plugin](./packages/stylelint-plugin-browserbug/) for
+  the webpack loader
+- Refer to [@browserbug/oxlint-plugin](./packages/oxlint-plugin-browserbug/) for
   the oxlint plugin. The rules are written for oxlint, and the ESLint plugin
   runs them on ESLint
-- Refer to [@woltapp/browserbug-core](./packages/browserbug-core/) for the core
-  logic behind the linter plugins.
+- Refer to [@browserbug/core](./packages/browserbug-core/) for the core logic
+  behind the linter plugins.
 - Refer to [Contributing](/CONTRIBUTING.md) for how to contribute to this
   project.

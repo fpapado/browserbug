@@ -1,4 +1,4 @@
-# `@woltapp/eslint-plugin-browserbug`
+# `@browserbug/eslint-plugin`
 
 > Lint rules for documenting, and eventually removing, browser bug workarounds.
 
@@ -52,7 +52,7 @@ The plugin supports ESLint 9 and 10, with
 `browserslist` and `web-features` are peer dependencies.
 
 ```sh
-npm i --save-dev eslint @woltapp/eslint-plugin-browserbug browserslist web-features
+npm i --save-dev eslint @browserbug/eslint-plugin browserslist web-features
 ```
 
 ### Step 2: Configure rules
@@ -66,7 +66,7 @@ If you use the recommended config:
 ```js
 // eslint.config.mjs
 import { defineConfig } from 'eslint/config';
-import browserbug from '@woltapp/eslint-plugin-browserbug';
+import browserbug from '@browserbug/eslint-plugin';
 
 export default defineConfig(browserbug.configs.recommended, {
   rules: {
@@ -91,7 +91,7 @@ Alternatively, you can specify only the plugin, and set each rule separately
 
 ```js
 import { defineConfig } from 'eslint/config';
-import browserbug from '@woltapp/eslint-plugin-browserbug';
+import browserbug from '@browserbug/eslint-plugin';
 
 export default defineConfig({
   plugins: {
@@ -115,8 +115,8 @@ Node's native TypeScript support; see
 
 The plugin does not ship legacy (`.eslintrc`) configs, since ESLint 10 removed
 eslintrc support. On ESLint 9 with eslintrc, you can still load the rules with
-`"plugins": ["@woltapp/browserbug"]` and
-`"rules": { "@woltapp/browserbug/no-outdated": "error" }`.
+`"plugins": ["@browserbug"]` and
+`"rules": { "@browserbug/no-outdated": "error" }`.
 
 Note: for the rules to practically work, you must also specify a
 [browserslist config](https://browsersl.ist/) in you repository. Any of the
@@ -195,7 +195,7 @@ targets supports that feature.
 
 This package ships a `browserbug` agent skill, which teaches coding agents to
 add and resolve `@browserbug` annotations. See
-[Agent skill](https://github.com/woltapp/browserbug#agent-skill) for how to
+[Agent skill](https://github.com/fpapado/browserbug#agent-skill) for how to
 install it.
 
 ## Keeping browser data stable
@@ -203,7 +203,7 @@ install it.
 Lint results depend on the installed versions of `browserslist`, `caniuse-lite`
 and `web-features`, so a lockfile bump can introduce errors in unrelated PRs.
 See
-[Keeping browser data stable](https://github.com/woltapp/browserbug#keeping-browser-data-stable)
+[Keeping browser data stable](https://github.com/fpapado/browserbug#keeping-browser-data-stable)
 for how to pin and deliberately update them.
 
 ## Configurations

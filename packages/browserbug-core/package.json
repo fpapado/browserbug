@@ -1,5 +1,5 @@
 {
-  "name": "@woltapp/browserbug-core",
+  "name": "@browserbug/core",
   "version": "1.0.0",
   "description": "",
   "keywords": [
@@ -9,7 +9,7 @@
   "author": "Wolt Enterprises Oy",
   "repository": {
     "type": "git",
-    "url": "https://github.com/woltapp/browserbug.git",
+    "url": "https://github.com/fpapado/browserbug.git",
     "directory": "packages/browserbug-core"
   },
   "files": [

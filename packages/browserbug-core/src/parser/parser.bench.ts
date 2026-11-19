@@ -2,7 +2,7 @@
  * Benchmarks for `parseBrowserbug`, which the lint rules call for every
  * `@browserbug` comment in every linted file.
  *
- * Run with `pnpm --filter @woltapp/browserbug-core bench`. See
+ * Run with `pnpm --filter @browserbug/core bench`. See
  * CONTRIBUTING.md.
  */
 import browserslist from 'browserslist';

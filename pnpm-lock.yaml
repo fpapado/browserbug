@@ -243,12 +243,12 @@ importers:
 
   packages/eslint-plugin-browserbug:
     dependencies:
+      '@browserbug/oxlint-plugin':
+        specifier: workspace:^
+        version: link:../oxlint-plugin-browserbug
       '@oxlint/plugins':
         specifier: ^1.93.0
         version: 1.93.0
-      '@woltapp/oxlint-plugin-browserbug':
-        specifier: workspace:^
-        version: link:../oxlint-plugin-browserbug
       browserslist:
         specifier: ^4.22.2
         version: 4.29.5
@@ -280,12 +280,12 @@ importers:
 
   packages/oxlint-plugin-browserbug:
     dependencies:
+      '@browserbug/core':
+        specifier: workspace:^
+        version: link:../browserbug-core
       '@oxlint/plugins':
         specifier: ^1.93.0
         version: 1.93.0
-      '@woltapp/browserbug-core':
-        specifier: workspace:^
-        version: link:../browserbug-core
       browserslist:
         specifier: ^4.22.2
         version: 4.29.5
@@ -302,7 +302,7 @@ importers:
 
   packages/stylelint-plugin-browserbug:
     dependencies:
-      '@woltapp/browserbug-core':
+      '@browserbug/core':
         specifier: workspace:^
         version: link:../browserbug-core
       browserslist:

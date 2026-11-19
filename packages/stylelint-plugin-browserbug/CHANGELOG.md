@@ -1,4 +1,4 @@
-# @woltapp/stylelint-plugin-browserbug
+# @browserbug/stylelint-plugin
 
 ## 1.0.0
 

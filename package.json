@@ -1,5 +1,5 @@
 {
-  "name": "@woltapp/browserbug-root",
+  "name": "@browserbug/root",
   "version": "0.0.0",
   "private": true,
   "description": "Document, and eventually remove, browser bug workarounds",
@@ -12,7 +12,7 @@
   "author": "Wolt Enterprises Oy",
   "repository": {
     "type": "git",
-    "url": "https://github.com/woltapp/browserbug.git"
+    "url": "https://github.com/fpapado/browserbug.git"
   },
   "scripts": {
     "bench": "pnpm --recursive --if-present run bench",

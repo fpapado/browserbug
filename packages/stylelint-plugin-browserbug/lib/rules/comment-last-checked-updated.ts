@@ -5,7 +5,7 @@ import {
   isWebFeatureDescriptor,
   webFeatures,
   parseBrowserbug,
-} from '@woltapp/browserbug-core';
+} from '@browserbug/core';
 import browserslist from 'browserslist';
 import stylelint, { type Rule } from 'stylelint';
 
@@ -14,7 +14,7 @@ const {
   utils: { report, ruleMessages, validateOptions },
 } = stylelint;
 
-const ruleName = '@woltapp/browserbug-comment-last-checked-updated';
+const ruleName = '@browserbug/comment-last-checked-updated';
 
 export const messages = ruleMessages(ruleName, {
   updated: (browser, lastCheckedVersion, highestVersion) =>
@@ -22,7 +22,7 @@ export const messages = ruleMessages(ruleName, {
 });
 
 const meta = {
-  url: 'https://github.com/woltapp/browserbug/blob/main/packages/stylelint-plugin-browserbug/docs/rules/browserbug-comment-last-checked-updated.md',
+  url: 'https://github.com/fpapado/browserbug/blob/main/packages/stylelint-plugin-browserbug/docs/rules/comment-last-checked-updated.md',
 };
 
 export type SecondaryOptions = {
@@ -70,7 +70,7 @@ const ruleFunction: Rule = (
       for (const match of allOpenerMatches) {
         const openerPos = match.index!; // always defined if we have a match
 
-        // Same slicing as browserbug-comment-no-outdated: declarations end at
+        // Same slicing as comment-no-outdated: declarations end at
         // the end of the line (or the comment).
         const nextNewlinePos = commentNode.text.indexOf('\n', openerPos);
         const endPos =
@@ -82,7 +82,7 @@ const ruleFunction: Rule = (
           webFeatures,
         });
 
-        // Parse errors are reported by browserbug-comment-no-outdated
+        // Parse errors are reported by comment-no-outdated
         if (!parseResult.success) {
           continue;
         }
@@ -95,7 +95,7 @@ const ruleFunction: Rule = (
           const status = getLastCheckedStatus(descriptor, supportTargets);
           if (status.updated) {
             // Within the drift, the report is downgraded to a warning (same as
-            // browserbug-comment-no-outdated)
+            // comment-no-outdated)
             const { withinVersionDrift } = getVersionDriftStatus({
               browser: descriptor.browser,
               version: status.lastCheckedVersion,

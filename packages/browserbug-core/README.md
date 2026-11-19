@@ -1,4 +1,4 @@
-# `@woltapp/browserbug-core`
+# `@browserbug/core`
 
 Parser and core comparison utilities for the browserbug syntax.
 
@@ -8,7 +8,7 @@ different linter.
 ## Installation
 
 ```sh
-npm install @woltapp/browserbug-core
+npm install @browserbug/core
 ```
 
 ## Usage
@@ -18,7 +18,7 @@ import {
   parseBrowserbug,
   getBrowserSupportStatus,
   type BrowserbugDescriptor,
-} from '@woltapp/browserbug-core';
+} from '@browserbug/core';
 import browserslist from 'browserslist',
 
 // Read targets from environment

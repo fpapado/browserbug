@@ -1,4 +1,4 @@
-# `@woltapp/oxlint-plugin-browserbug`
+# `@browserbug/oxlint-plugin`
 
 > Lint rules for documenting, and eventually removing, browser bug workarounds,
 > for [oxlint](https://oxc.rs/docs/guide/usage/linter).
@@ -7,7 +7,7 @@ This is the
 [oxlint JS plugin](https://oxc.rs/docs/guide/usage/linter/js-plugins) for
 browserbug. It has the same rules, with the same ids (`browserbug/<rule>`),
 options and messages, as
-[`@woltapp/eslint-plugin-browserbug`](https://github.com/woltapp/browserbug/blob/main/packages/eslint-plugin-browserbug).
+[`@browserbug/eslint-plugin`](https://github.com/fpapado/browserbug/blob/main/packages/eslint-plugin-browserbug).
 See that package for the motivation and the `@browserbug` comment syntax.
 
 The rules are defined here, with oxlint's
@@ -20,7 +20,7 @@ plugin runs the same rules on ESLint, through `eslintCompatPlugin`.
 ### Step 1: Install
 
 ```sh
-npm i -D oxlint @woltapp/oxlint-plugin-browserbug browserslist web-features
+npm i -D oxlint @browserbug/oxlint-plugin browserslist web-features
 ```
 
 `oxlint` (1.93 or later), `browserslist` and `web-features` are peer
@@ -36,7 +36,7 @@ its rules:
 ```json
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "jsPlugins": ["@woltapp/oxlint-plugin-browserbug"],
+  "jsPlugins": ["@browserbug/oxlint-plugin"],
   "rules": {
     "browserbug/no-outdated": "error"
   }
@@ -70,7 +70,7 @@ Like the ESLint plugin, the rules compare annotations against your
 
   ```json
   {
-    "jsPlugins": ["@woltapp/oxlint-plugin-browserbug"],
+    "jsPlugins": ["@browserbug/oxlint-plugin"],
     "settings": {
       "browserslistQuery": "chrome 120, firefox 130, safari 17"
     },
@@ -88,7 +88,7 @@ Like the ESLint plugin, the rules compare annotations against your
 ```
 
 See the
-[ESLint plugin's documentation](https://github.com/woltapp/browserbug/blob/main/packages/eslint-plugin-browserbug/README.md#step-3-use-browserbug-comments-in-code)
+[ESLint plugin's documentation](https://github.com/fpapado/browserbug/blob/main/packages/eslint-plugin-browserbug/README.md#step-3-use-browserbug-comments-in-code)
 for every descriptor.
 
 Disable directives use the same rule id, for example
@@ -105,11 +105,11 @@ Disable directives use the same rule id, for example
 
 ## Development
 
-The rule modules live in `src/rules`. `@woltapp/eslint-plugin-browserbug`
-imports them from this package, so a change to a rule ships through this
-package; changesets bumps the ESLint plugin as a dependent. The ESLint plugin's
-`RuleTester` tests run the rules through `eslintCompatPlugin`, and the rule docs
-are generated in that package.
+The rule modules live in `src/rules`. `@browserbug/eslint-plugin` imports them
+from this package, so a change to a rule ships through this package; changesets
+bumps the ESLint plugin as a dependent. The ESLint plugin's `RuleTester` tests
+run the rules through `eslintCompatPlugin`, and the rule docs are generated in
+that package.
 
 `pnpm test` runs the real `oxlint` binary against the fixture projects in
 `tests/fixtures`, with the built plugin, so run `pnpm build` first.
@@ -118,12 +118,12 @@ are generated in that package.
 
 This package ships a `browserbug` agent skill, which teaches coding agents to
 add and resolve `@browserbug` annotations. See
-[Agent skill](https://github.com/woltapp/browserbug#agent-skill) for how to
+[Agent skill](https://github.com/fpapado/browserbug#agent-skill) for how to
 install it.
 
 ## Rules
 
 | Name                                                                                                                                         | Description                                                                                                               |
 | :------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------ |
-| [last-checked-updated](https://github.com/woltapp/browserbug/blob/main/packages/eslint-plugin-browserbug/docs/rules/last-checked-updated.md) | Reports `last-checked` browser workarounds, if browserslist targets a newer version of that browser than the one checked. |
-| [no-outdated](https://github.com/woltapp/browserbug/blob/main/packages/eslint-plugin-browserbug/docs/rules/no-outdated.md)                   | Ensures that no browser workarounds exist, if browserslist support for that browser is outside the specified range.       |
+| [last-checked-updated](https://github.com/fpapado/browserbug/blob/main/packages/eslint-plugin-browserbug/docs/rules/last-checked-updated.md) | Reports `last-checked` browser workarounds, if browserslist targets a newer version of that browser than the one checked. |
+| [no-outdated](https://github.com/fpapado/browserbug/blob/main/packages/eslint-plugin-browserbug/docs/rules/no-outdated.md)                   | Ensures that no browser workarounds exist, if browserslist support for that browser is outside the specified range.       |

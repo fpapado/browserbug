@@ -4,7 +4,7 @@ import type { ESLint, Linter, Rule } from 'eslint';
 
 import { createRequire } from 'node:module';
 
-import oxlintPlugin from '@woltapp/oxlint-plugin-browserbug';
+import oxlintPlugin from '@browserbug/oxlint-plugin';
 import { eslintCompatPlugin } from '@oxlint/plugins';
 
 import recommended from './configs/recommended.js';
@@ -15,7 +15,7 @@ const pkg = createRequire(import.meta.url)('../package.json') as {
   version: string;
 };
 
-// The rules live in `@woltapp/oxlint-plugin-browserbug`, written against
+// The rules live in `@browserbug/oxlint-plugin`, written against
 // oxlint's `createOnce` API. `eslintCompatPlugin` gives each rule the `create`
 // that ESLint calls, which delegates to `createOnce`. It converts the rule
 // objects in place, so they are shared with the oxlint plugin; oxlint ignores

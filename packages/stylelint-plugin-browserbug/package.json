@@ -1,5 +1,5 @@
 {
-  "name": "@woltapp/stylelint-plugin-browserbug",
+  "name": "@browserbug/stylelint-plugin",
   "version": "1.0.0",
   "description": "Document, and eventually remove, browser bug workarounds",
   "keywords": [
@@ -10,7 +10,7 @@
   "author": "Wolt Enterprises Oy",
   "repository": {
     "type": "git",
-    "url": "https://github.com/woltapp/browserbug.git",
+    "url": "https://github.com/fpapado/browserbug.git",
     "directory": "packages/stylelint-plugin-browserbug"
   },
   "files": [
@@ -46,7 +46,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@woltapp/browserbug-core": "workspace:^"
+    "@browserbug/core": "workspace:^"
   },
   "devDependencies": {
     "@types/node": "22.20.5",

@@ -59,11 +59,11 @@ export interface RuleDefinition<
 }
 
 const docsUrl = (name: string) =>
-  `https://github.com/woltapp/browserbug/blob/main/packages/eslint-plugin-browserbug/docs/rules/${name}`;
+  `https://github.com/fpapado/browserbug/blob/main/packages/eslint-plugin-browserbug/docs/rules/${name}`;
 
 /**
  * Defines a rule with oxlint's `createOnce` API, adding the docs URL and the
- * defaults for the options. `@woltapp/eslint-plugin-browserbug` runs the
+ * defaults for the options. `@browserbug/eslint-plugin` runs the
  * same rules on ESLint, through `eslintCompatPlugin`.
  */
 export function createRule<

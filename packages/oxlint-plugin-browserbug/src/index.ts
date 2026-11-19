@@ -7,7 +7,7 @@ export type { BrowserbugSettings } from './rule.js';
 
 // The rules are written against oxlint's `createOnce` API, so oxlint sets each
 // rule up once rather than once per file.
-// `@woltapp/eslint-plugin-browserbug` runs the same rules on ESLint, by
+// `@browserbug/eslint-plugin` runs the same rules on ESLint, by
 // wrapping them with `eslintCompatPlugin`.
 const plugin = definePlugin({
   meta: {

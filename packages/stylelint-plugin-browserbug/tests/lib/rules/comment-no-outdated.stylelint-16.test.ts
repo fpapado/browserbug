@@ -38,4 +38,4 @@ test('the rule under test resolves `stylelint` to Stylelint 16', async () => {
   expect(mocked).toBe(v16);
 });
 
-await import('./browserbug-comment-no-outdated.test.js');
+await import('./comment-no-outdated.test.js');

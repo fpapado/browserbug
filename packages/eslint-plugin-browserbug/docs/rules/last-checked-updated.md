@@ -69,7 +69,7 @@ against the newest targeted version, it fires on every new browser release;
 export default [
   {
     rules: {
-      '@woltapp/browserbug/last-checked-updated': ['warn', { versionDrift: 2 }],
+      '@browserbug/last-checked-updated': ['warn', { versionDrift: 2 }],
     },
   },
 ];

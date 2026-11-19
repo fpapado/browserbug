@@ -77,10 +77,10 @@ next to the code as `*.bench.ts` files:
 pnpm bench
 
 # only browserbug-core
-pnpm --filter @woltapp/browserbug-core bench
+pnpm --filter @browserbug/core bench
 
 # only some benchmark files, by path
-pnpm --filter @woltapp/browserbug-core bench src/parser
+pnpm --filter @browserbug/core bench src/parser
 ```
 
 A full run takes about half a minute. The numbers depend on your machine and
@@ -98,7 +98,7 @@ another application.
 
 This section uses the following example:
 
-- The relevant package is `@woltapp/eslint-plugin-browserbug`
+- The relevant package is `@browserbug/eslint-plugin`
 - The source repository path is `/Users/user/browserbug`
 - The target application path is `/Users/user/my-app`
 
@@ -118,7 +118,7 @@ In your **target** application `package.json`, add:
 ```json
 {
   "dependencies": {
-    "@woltapp/eslint-plugin-browserbug": "file:/Users/user/browserbug/packages/eslint-plugin-browserbug"
+    "@browserbug/eslint-plugin": "file:/Users/user/browserbug/packages/eslint-plugin-browserbug"
   }
 }
 ```

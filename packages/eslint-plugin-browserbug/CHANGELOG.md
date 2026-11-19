@@ -1,4 +1,4 @@
-# @woltapp/eslint-plugin-browserbug
+# @browserbug/eslint-plugin
 
 ## 1.0.0
 

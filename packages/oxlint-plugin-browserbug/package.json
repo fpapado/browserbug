@@ -1,5 +1,5 @@
 {
-  "name": "@woltapp/oxlint-plugin-browserbug",
+  "name": "@browserbug/oxlint-plugin",
   "version": "1.0.0",
   "description": "Document, and eventually remove, browser bug workarounds",
   "keywords": [
@@ -11,7 +11,7 @@
   "author": "Wolt Enterprises Oy",
   "repository": {
     "type": "git",
-    "url": "https://github.com/woltapp/browserbug.git",
+    "url": "https://github.com/fpapado/browserbug.git",
     "directory": "packages/oxlint-plugin-browserbug"
   },
   "files": [
@@ -46,8 +46,8 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@oxlint/plugins": "^1.93.0",
-    "@woltapp/browserbug-core": "workspace:^"
+    "@browserbug/core": "workspace:^",
+    "@oxlint/plugins": "^1.93.0"
   },
   "devDependencies": {
     "@types/node": "22.20.5",

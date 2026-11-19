@@ -6,7 +6,7 @@ import { describe, expect, test } from 'vitest';
 import plugin, {
   messages as pluginMessages,
   type SecondaryOptions,
-} from '../../../lib/rules/browserbug-comment-no-outdated.js';
+} from '../../../lib/rules/comment-no-outdated.js';
 
 const plugins = [plugin];
 

@@ -10,7 +10,7 @@ const settings = { browserslistQuery: 'chrome 120' };
 describe('plugin object', () => {
   it('has meta', () => {
     expect(plugin.meta).toEqual({
-      name: '@woltapp/eslint-plugin-browserbug',
+      name: '@browserbug/eslint-plugin',
       version: pkg.version,
       namespace: 'browserbug',
     });

@@ -4,8 +4,8 @@ import process from 'node:process';
 import { URL, fileURLToPath } from 'node:url';
 
 // eslint-doc-generator derives the rule prefix from `meta.name`, which gives
-// `@woltapp/browserbug`. It does not read `meta.namespace` yet, so it would
-// look for `@woltapp/browserbug/no-outdated` in our configs instead of
+// `@browserbug`. It does not read `meta.namespace` yet, so it would
+// look for `@browserbug/no-outdated` in our configs instead of
 // `browserbug/no-outdated`, and miss that the rule is in `recommended`.
 // The generator loads the plugin in this same process after loading this file,
 // and gets the same cached module, so we can override the name it sees, only

@@ -1,4 +1,4 @@
-# @woltapp/browserbug-core
+# @browserbug/core
 
 ## 1.0.0
 

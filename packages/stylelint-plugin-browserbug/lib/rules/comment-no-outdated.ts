@@ -8,7 +8,7 @@ import {
   parseBrowserbug,
   type BrowserDescriptor,
   type BrowserbugSyntaxError,
-} from '@woltapp/browserbug-core';
+} from '@browserbug/core';
 import browserslist from 'browserslist';
 import stylelint, { type Rule } from 'stylelint';
 
@@ -17,7 +17,7 @@ const {
   utils: { report, ruleMessages, validateOptions },
 } = stylelint;
 
-const ruleName = '@woltapp/browserbug-comment-no-outdated';
+const ruleName = '@browserbug/comment-no-outdated';
 
 export const messages = ruleMessages(ruleName, {
   parseError: (err) => `Unexpected @browserbug parsing error: ${err}`,
@@ -30,7 +30,7 @@ export const messages = ruleMessages(ruleName, {
 });
 
 const meta = {
-  url: 'https://github.com/woltapp/browserbug/packages/stylelint-plugin-browserbug/blob/main/README.md',
+  url: 'https://github.com/fpapado/browserbug/blob/main/packages/stylelint-plugin-browserbug/README.md',
 };
 
 export type SecondaryOptions = {

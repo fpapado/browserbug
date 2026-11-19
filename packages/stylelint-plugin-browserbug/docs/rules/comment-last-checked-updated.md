@@ -1,4 +1,4 @@
-# @woltapp/browserbug-comment-last-checked-updated
+# @browserbug/comment-last-checked-updated
 
 Reports `last-checked` browserbug comments, if browserslist targets a newer
 version of that browser than the one checked.
@@ -27,11 +27,11 @@ safari 17.2
 - If the bug is still there, bump the `last-checked` version.
 - If the bug was fixed, switch the descriptor to `lower-than <fixed version>`
   (or another comparator), so that
-  [`browserbug-comment-no-outdated`](./browserbug-comment-no-outdated.md) can
-  tell you when the workaround can go.
+  [`comment-no-outdated`](./comment-no-outdated.md) can tell you when the
+  workaround can go.
 
 Other comparators, `web-feature` descriptors, and browsers that are not in your
-targets are ignored. Parse errors are left to `browserbug-comment-no-outdated`.
+targets are ignored. Parse errors are left to `comment-no-outdated`.
 
 New browser versions only show up once your browserslist data (`caniuse-lite`)
 is updated, for example with `npx update-browserslist-db@latest`, so how often
@@ -93,16 +93,13 @@ the newest targeted version, it fires on every new browser release;
 ```json
 {
   "rules": {
-    "@woltapp/browserbug-comment-last-checked-updated": [
-      true,
-      { "versionDrift": 2 }
-    ]
+    "@browserbug/comment-last-checked-updated": [true, { "versionDrift": 2 }]
   }
 }
 ```
 
 See
-[`browserbug-comment-no-outdated`'s `versionDrift`](./browserbug-comment-no-outdated.md#versiondrift)
+[`comment-no-outdated`'s `versionDrift`](./comment-no-outdated.md#versiondrift)
 for how drift is counted.
 
 ## When Not To Use It
@@ -114,5 +111,5 @@ periodically, for example in a scheduled CI job.
 
 ## Further Reading
 
-- [`browserbug-comment-no-outdated`](./browserbug-comment-no-outdated.md)
+- [`comment-no-outdated`](./comment-no-outdated.md)
 - [browserslist](https://github.com/browserslist/browserslist)

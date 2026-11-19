@@ -1,4 +1,4 @@
-# @woltapp/browserbug-comment-no-outdated
+# @browserbug/comment-no-outdated
 
 Ensures that no browser workarounds exist, if browserslist support for that
 browser is outside the specified range.
@@ -86,7 +86,7 @@ run on every support-target bump.
 ```json
 {
   "rules": {
-    "@woltapp/browserbug-comment-no-outdated": [true, { "versionDrift": 2 }]
+    "@browserbug/comment-no-outdated": [true, { "versionDrift": 2 }]
   }
 }
 ```

@@ -56,7 +56,7 @@ force you to re-check them straight away.
 export default [
   {
     rules: {
-      '@woltapp/browserbug/no-outdated': ['error', { versionDrift: 2 }],
+      '@browserbug/no-outdated': ['error', { versionDrift: 2 }],
     },
   },
 ];

@@ -2,7 +2,7 @@
  * Benchmarks for the work the lint rules do per `@browserbug` comment after
  * parsing, and once per file, against realistic browserslist targets.
  *
- * Run with `pnpm --filter @woltapp/browserbug-core bench`. See
+ * Run with `pnpm --filter @browserbug/core bench`. See
  * CONTRIBUTING.md.
  */
 import browserslist from 'browserslist';

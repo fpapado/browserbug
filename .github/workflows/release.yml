@@ -56,6 +56,7 @@ jobs:
           publish-script: pnpm changeset:release
           github-token: ${{ secrets.GITHUB_TOKEN }}
         # No npm token: pnpm publishes with npm trusted publishing, using the
-        # `id-token: write` OIDC token above, and attaches provenance on its
-        # own. Each package's trusted publisher on npmjs.com must point at this
-        # repository and workflow file, and allow `npm publish`.
+        # `id-token: write` OIDC token above. `changeset:release` passes
+        # `--provenance`, so a publish fails rather than silently skipping
+        # provenance. Each package's trusted publisher on npmjs.com must point
+        # at this repository and workflow file, and allow `npm publish`.
